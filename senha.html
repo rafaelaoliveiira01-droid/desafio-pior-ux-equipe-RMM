@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Senha Ultra Segura</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body class="fundoSenha">
+
+
+    <div class="senhaContainer">
+
+
+        <marquee>
+            🔐 ÁREA DE SEGURANÇA 🔐
+        </marquee>
+
+
+        <h1>
+            CRIE SUA SENHA
+        </h1>
+
+
+        <p>
+            Fácil, rápido e completamente desnecessariamente complicado.
+        </p>
+
+
+        <div class="regrasSenha">
+
+            <h3>
+                ⚠️ REGRAS OBRIGATÓRIAS
+            </h3>
+
+
+            <p>
+                Sua senha precisa:
+            </p>
+
+
+            <ul>
+
+                <li>Ter exatamente 8 caracteres.</li>
+
+                <li>Ter pelo menos uma letra MAIÚSCULA.</li>
+
+                <li>Ter pelo menos uma letra minúscula.</li>
+
+                <li>Ter pelo menos um número.</li>
+
+                <li>Ter pelo menos um caractere especial.</li>
+
+                <li>Não começar com número.</li>
+
+                <li>Não terminar com número.</li>
+
+            </ul>
+
+
+        </div>
+
+
+        <label>
+            Crie sua senha:
+        </label>
+
+
+        <input
+            type="password"
+            id="senha"
+            placeholder="Sua senha">
+
+
+        <label>
+            Confirme sua senha:
+        </label>
+
+
+        <input
+            type="password"
+            id="confirmar"
+            placeholder="Digite novamente">
+
+
+        <button
+            onclick="verificarSenha()"
+            class="botaoSenhaGrande">
+
+            VERIFICAR SENHA
+
+        </button>
+
+
+        <button
+            onclick="window.location.href='index.html'"
+            class="botaoVoltar">
+
+            🔙 Voltar
+
+        </button>
+
+
+        <div id="senhaMensagem"></div>
+
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

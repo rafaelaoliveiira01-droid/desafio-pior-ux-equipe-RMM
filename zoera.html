@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Você caiu!</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body class="fundoZoera">
+
+
+    <div class="zoera-box">
+
+        <div class="emojiGrande">
+            🤡
+        </div>
+
+
+        <h1>
+            PARABÉNS!!!
+        </h1>
+
+
+        <h2>
+            VOCÊ CAIU NESSA. KKKKK
+        </h2>
+
+
+        <p>
+            Você realmente clicou em
+            <b>"NÃO CLIQUE AQUI"</b>?
+        </p>
+
+
+        <p>
+            Era literalmente o botão mais suspeito da página.
+        </p>
+
+
+        <p>
+            🤡🤡🤡🤡🤡
+        </p>
+
+
+        <hr>
+
+
+        <p class="textoPequeno">
+
+            Esta página não possui absolutamente
+            nenhuma função útil.
+
+        </p>
+
+
+        <button
+            class="botaoVoltar"
+            onclick="voltarInicio()">
+
+            🔙 VOLTAR PARA O CADASTRO
+
+        </button>
+
+
+        <button
+            class="botaoOutro"
+            onclick="outraZoera()">
+
+            NÃO QUERO VOLTAR
+
+        </button>
+
+
+        <div id="zoeraMensagem"></div>
+
+
+    </div>
+
+
+    <script>
+
+        function voltarInicio() {
+
+            window.location.href = "index.html";
+
+        }
+
+
+        function outraZoera() {
+
+            document.getElementById("zoeraMensagem").innerHTML =
+
+                "🤡 Você clicou de novo. Impressionante.";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

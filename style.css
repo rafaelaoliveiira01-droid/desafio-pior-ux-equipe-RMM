@@ -2,33 +2,50 @@
     box-sizing: border-box;
 }
 
+
 body {
     margin: 0;
+
+    font-family: "Comic Sans MS", cursive;
+
     background:
         repeating-linear-gradient(
             45deg,
-            #ffff00,
-            #ffff00 10px,
-            #ff00ff 10px,
-            #ff00ff 20px
+            yellow,
+            yellow 15px,
+            magenta 15px,
+            magenta 30px
         );
 
-    font-family: "Comic Sans MS", cursive;
     color: #000080;
 }
 
+
+/* =========================
+   PÁGINA PRINCIPAL
+========================= */
+
+
 #avisoTopo {
+
     background: red;
+
     color: yellow;
-    font-size: 20px;
-    font-weight: bold;
+
+    padding: 12px;
+
     text-align: center;
-    padding: 10px;
+
+    font-weight: bold;
+
+    font-size: 20px;
 
     animation: piscar 0.5s infinite;
 }
 
+
 @keyframes piscar {
+
     0% {
         opacity: 1;
     }
@@ -40,270 +57,606 @@ body {
     100% {
         opacity: 1;
     }
+
 }
 
+
 main {
-    width: 650px;
+
+    width: 700px;
+
     margin: 50px auto;
+
     background: #c0c0c0;
-    border: 8px ridge white;
+
     padding: 20px;
+
+    border: 10px ridge white;
+
     box-shadow: 15px 15px 0 black;
 }
 
+
 marquee {
+
     background: blue;
+
     color: yellow;
+
     font-size: 22px;
-    padding: 8px;
+
+    padding: 10px;
 }
 
+
 h1 {
-    color: red;
+
     text-align: center;
-    font-size: 38px;
+
+    color: red;
+
+    font-size: 40px;
 
     text-shadow:
-        3px 3px yellow,
+        4px 4px yellow,
         -3px -3px lime;
 }
 
-.subtitulo {
-    background: yellow;
-    color: red;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-}
 
 .barra {
+
     background: black;
+
     color: lime;
+
     padding: 10px;
+
     font-family: monospace;
-    margin: 15px 0;
 }
 
-fieldset {
-    border: 5px dotted red;
+
+.avisoAmarelo {
+
     margin-top: 20px;
-    background: #eeeeee;
-}
 
-legend {
-    background: purple;
-    color: yellow;
-    padding: 8px;
+    padding: 15px;
+
+    background: yellow;
+
+    color: red;
+
+    border: 5px dashed red;
+
     font-weight: bold;
 }
 
-label {
-    display: block;
-    margin-top: 15px;
-    color: #222;
+
+fieldset {
+
+    margin-top: 25px;
+
+    border: 5px dotted red;
+
+    background: #eee;
 }
+
+
+legend {
+
+    background: purple;
+
+    color: yellow;
+
+    padding: 10px;
+
+    font-weight: bold;
+}
+
+
+label {
+
+    display: block;
+
+    margin-top: 15px;
+
+    color: black;
+}
+
 
 input,
 select {
+
     width: 100%;
+
     padding: 12px;
+
+    margin-top: 5px;
+
     border: 4px inset #aaa;
-    background: white;
 }
 
-.regra {
-    background: pink;
-    border: 3px solid red;
-    padding: 10px;
-    color: red;
-    font-size: 12px;
-}
-
-.checkbox {
-    margin-top: 20px;
-    background: orange;
-    padding: 10px;
-    border: 4px double purple;
-}
-
-.checkbox input {
-    width: auto;
-}
-
-.checkbox label {
-    display: inline;
-}
 
 .botoes {
+
     display: flex;
+
     justify-content: space-between;
+
     margin-top: 30px;
 }
 
+
 button {
+
     cursor: pointer;
+
     font-family: "Comic Sans MS", cursive;
+
     font-weight: bold;
 }
 
+
 .cancelar {
+
     background: lime;
+
     color: blue;
+
     border: 6px outset green;
+
     padding: 15px 35px;
+
     font-size: 18px;
 }
 
+
 .avancar {
+
     background: #ddd;
+
     color: #aaa;
+
     border: 2px solid #aaa;
+
     padding: 8px 15px;
+
     font-size: 10px;
 }
 
-.pequeno {
-    margin-top: 30px;
-    background: black;
-    color: black;
-    border: none;
-    font-size: 8px;
-}
 
-#mensagem {
-    margin-top: 20px;
-    padding: 15px;
+.botao-suspeito {
+
+    display: block;
+
+    margin: 30px auto;
+
     background: red;
+
     color: yellow;
-    font-weight: bold;
+
+    border: 5px dashed black;
+
+    padding: 15px;
+
+    font-size: 17px;
+
+    animation: piscar 0.7s infinite;
 }
 
-#carregando {
-    display: none;
-    position: fixed;
-    top: 45%;
-    left: 35%;
+
+.botaoPequeno {
+
     background: black;
-    color: lime;
-    padding: 30px;
-    font-size: 25px;
-    border: 8px ridge white;
+
+    color: black;
+
+    border: none;
+
+    font-size: 8px;
+
+    display: block;
+
+    margin: 20px auto;
 }
+
+
+.botaoSenha {
+
+    background: orange;
+
+    color: red;
+
+    border: 5px outset yellow;
+
+    padding: 15px;
+
+    font-size: 16px;
+}
+
+
+.checkbox {
+
+    background: orange;
+
+    padding: 10px;
+
+    margin-top: 20px;
+
+    border: 4px double purple;
+}
+
+
+.checkbox input {
+
+    width: auto;
+}
+
 
 .popup {
+
     position: fixed;
-    background: #ffff00;
-    border: 6px outset white;
+
+    width: 270px;
+
+    background: yellow;
+
+    border: 7px outset white;
+
     padding: 15px;
-    width: 260px;
+
     z-index: 1000;
+
     box-shadow: 10px 10px black;
 }
 
+
 .popup h3 {
+
     background: red;
+
     color: white;
-    margin-top: 0;
+
+    padding: 5px;
 }
 
+
 .popup button {
+
     background: blue;
+
     color: white;
+
     padding: 8px 20px;
 }
 
+
 .popup1 {
+
     top: 80px;
+
     left: 30px;
 }
 
+
 .popup2 {
+
     top: 300px;
+
     right: 30px;
 }
 
+
 .popup3 {
+
     bottom: 40px;
+
     left: 40px;
 }
 
-#final {
-    display: none;
-    width: 600px;
-    margin: 100px auto;
-    background: yellow;
-    color: red;
-    padding: 50px;
+
+#mensagem {
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: red;
+
+    color: yellow;
+
+    font-weight: bold;
+}
+
+
+.rodape {
+
+    margin-top: 30px;
+
     text-align: center;
-    border: 15px ridge blue;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   PÁGINA DE ZOEIRA
+========================= */
+
+
+.fundoZoera {
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            magenta 0px,
+            magenta 40px,
+            cyan 40px,
+            cyan 80px
+        );
+}
+
+
+.zoera-box {
+
+    width: 650px;
+
+    margin: 100px auto;
+
+    padding: 50px;
+
+    text-align: center;
+
+    background: yellow;
+
+    border: 15px ridge red;
+
+    box-shadow:
+        20px 20px black,
+        -10px -10px blue;
+
+    transform: rotate(-2deg);
+}
+
+
+.emojiGrande {
+
+    font-size: 100px;
+
+    animation: girar 1s infinite linear;
+}
+
+
+@keyframes girar {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+.zoera-box h1 {
+
+    font-size: 60px;
+}
+
+
+.zoera-box h2 {
+
+    color: purple;
+
+    font-size: 35px;
+}
+
+
+.zoera-box p {
+
+    color: black;
+
+    font-size: 21px;
+}
+
+
+.textoPequeno {
+
+    font-size: 13px !important;
+
+    color: #555 !important;
+}
+
+
+.botaoVoltar {
+
+    background: lime;
+
+    color: red;
+
+    border: 7px outset green;
+
+    padding: 18px;
+
+    font-size: 18px;
+}
+
+
+.botaoOutro {
+
+    display: block;
+
+    margin: 20px auto;
+
+    background: black;
+
+    color: white;
+
+    padding: 10px;
+}
+
+
+/* =========================
+   PÁGINA DE SENHA
+========================= */
+
+
+.fundoSenha {
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            #00ff00,
+            #00ff00 20px,
+            #0000ff 20px,
+            #0000ff 40px
+        );
+}
+
+
+.senhaContainer {
+
+    width: 650px;
+
+    margin: 80px auto;
+
+    padding: 30px;
+
+    background: #c0c0c0;
+
+    border: 10px ridge white;
+
     box-shadow: 20px 20px black;
 }
 
-#final h1 {
-    font-size: 50px;
+
+.senhaContainer marquee {
+
+    background: red;
+
+    color: yellow;
 }
-#paginaInternet {
-    display: none;
 
-    position: fixed;
 
-    inset: 0;
+.regrasSenha {
+
+    margin: 20px 0;
+
+    padding: 20px;
+
+    background: pink;
+
+    border: 5px dashed red;
+
+    color: red;
+}
+
+
+.regrasSenha li {
+
+    margin: 10px 0;
+}
+
+
+.botaoSenhaGrande {
+
+    display: block;
+
+    margin: 30px auto;
+
+    padding: 18px;
+
+    background: lime;
+
+    color: blue;
+
+    border: 7px outset green;
+
+    font-size: 20px;
+}
+
+
+#senhaMensagem {
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: red;
+
+    color: yellow;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   PÁGINA SEM INTERNET
+========================= */
+
+
+.internetBody {
 
     background: white;
 
-    color: #202124;
-
     font-family: Arial, sans-serif;
 
-    z-index: 99999;
+    color: #202124;
 }
 
-.erroInternet {
+
+.internetContainer {
+
     width: 600px;
 
-    margin: 150px auto;
-
-    text-align: left;
+    margin: 130px auto;
 
     padding: 30px;
 }
 
+
 .iconeInternet {
-    font-size: 60px;
+
+    font-size: 70px;
 
     filter: grayscale(1);
-
-    margin-bottom: 20px;
 }
 
-.erroInternet h1 {
-    color: #202124;
 
-    text-shadow: none;
+.internetContainer h1 {
 
     text-align: left;
 
-    font-size: 28px;
+    color: #202124;
+
+    font-size: 30px;
+
+    text-shadow: none;
 }
 
-.erroInternet p {
+
+.internetContainer p {
+
     color: #5f6368;
 
     font-size: 16px;
 }
 
-.codigo {
-    font-family: monospace;
 
-    background: #f1f3f4;
+.codigoErro {
 
     display: inline-block;
 
+    background: #f1f3f4;
+
     padding: 8px;
+
+    font-family: monospace;
 }
 
-.erroInternet button {
-    margin-top: 20px;
+
+.botoesInternet button {
 
     margin-right: 10px;
 
@@ -316,6 +669,110 @@ button {
     color: #1a73e8;
 
     font-family: Arial;
+}
 
-    font-weight: normal;
+
+.caixaDetalhes {
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background: #f1f3f4;
+
+    color: #555;
+}
+
+
+/* =========================
+   PÁGINA FINAL
+========================= */
+
+
+.fundoFinal {
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            yellow,
+            yellow 20px,
+            lime 20px,
+            lime 40px
+        );
+}
+
+
+.finalContainer {
+
+    width: 650px;
+
+    margin: 100px auto;
+
+    padding: 50px;
+
+    text-align: center;
+
+    background: yellow;
+
+    border: 15px ridge blue;
+
+    box-shadow: 20px 20px black;
+}
+
+
+.trofeu {
+
+    font-size: 100px;
+}
+
+
+.finalContainer h1 {
+
+    font-size: 55px;
+
+    color: red;
+}
+
+
+.finalContainer h2 {
+
+    font-size: 35px;
+
+    color: blue;
+}
+
+
+.finalContainer p {
+
+    color: black;
+
+    font-size: 20px;
+}
+
+
+.premio {
+
+    margin: 30px;
+
+    padding: 20px;
+
+    background: orange;
+
+    border: 5px dotted red;
+
+    color: red;
+
+    font-weight: bold;
+}
+
+
+.finalContainer button {
+
+    padding: 15px;
+
+    background: lime;
+
+    color: red;
+
+    border: 6px outset green;
 }

@@ -1,35 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Cadastro Fácil 2007</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <div id="avisoTopo">
-        ⚠️ ATENÇÃO: você está navegando na internet.
+        ⚠️ ATENÇÃO: VOCÊ ESTÁ NAVEGANDO NA INTERNET ⚠️
     </div>
+
+    <!-- POPUPS -->
 
     <div class="popup popup1">
-        <h3>PARABÉNS!</h3>
-        <p>Você ganhou uma oportunidade que não solicitou.</p>
-        <button onclick="fecharPopup(this)">OK</button>
+
+        <h3>🚨 AVISO IMPORTANTE</h3>
+
+        <p>
+            Seu computador está funcionando normalmente.
+        </p>
+
+        <button onclick="fecharPopup(this)">
+            OK
+        </button>
+
     </div>
+
 
     <div class="popup popup2">
-        <h3>IMPORTANTE!!!</h3>
-        <p>Esta mensagem não é importante.</p>
-        <button onclick="fecharPopup(this)">Fechar</button>
+
+        <h3>🎉 PARABÉNS!</h3>
+
+        <p>
+            Você ganhou absolutamente nada.
+        </p>
+
+        <button onclick="fecharPopup(this)">
+            Obrigado
+        </button>
+
     </div>
 
+
     <div class="popup popup3">
-        <h3>AVISO DO SISTEMA</h3>
-        <p>Seu sistema está funcionando normalmente.</p>
-        <button onclick="fecharPopup(this)">Entendi</button>
+
+        <h3>⚠️ CUIDADO</h3>
+
+        <p>
+            Não existe nenhum perigo aqui.
+        </p>
+
+        <button onclick="fecharPopup(this)">
+            Fechar
+        </button>
+
     </div>
+
 
     <main>
 
@@ -37,151 +69,190 @@
             ★★★ BEM-VINDO AO CADASTRO MAIS FÁCIL DA INTERNET ★★★
         </marquee>
 
-        <h1>CADASTRO SUPER FÁCIL™</h1>
+
+        <h1>
+            CADASTRO SUPER FÁCIL™
+        </h1>
+
 
         <div class="barra">
-            ████████████████████ 99%
+            ███████████████████░ 99%
         </div>
 
-        <p class="subtitulo">
-            Preencha alguns poucos campos obrigatórios opcionais.
-        </p>
+
+        <div class="avisoAmarelo">
+
+            ⚠️
+            Antes de continuar, recomendamos que você
+            não leia as instruções.
+
+        </div>
+
 
         <form id="cadastro">
 
+
             <fieldset>
 
-                <legend>INFORMAÇÕES DESNECESSÁRIAS</legend>
+                <legend>
+                    📋 INFORMAÇÕES IMPORTANTÍSSIMAS
+                </legend>
 
-                <label>Nome:</label>
-                <input type="text" id="nome">
 
-                <label>Nome da sua primeira escola:</label>
-                <input type="text" id="escola">
+                <label>
+                    Nome completo:
+                </label>
 
-                <label>E-mail:</label>
-                <input type="text" id="email">
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Digite seu nome">
 
-                <label>Qual desses números você prefere?</label>
+
+                <label>
+                    Nome da sua primeira escola:
+                </label>
+
+                <input
+                    type="text"
+                    id="escola"
+                    placeholder="Por que precisamos disso? Não sabemos.">
+
+
+                <label>
+                    E-mail:
+                </label>
+
+                <input
+                    type="text"
+                    id="email"
+                    placeholder="email@email.com">
+
+
+                <label>
+                    Escolha seu número favorito:
+                </label>
 
                 <select id="numero">
-                    <option value="">Escolha uma opção</option>
+
+                    <option value="">
+                        -- escolha cuidadosamente --
+                    </option>
+
+                    <option>7</option>
+
                     <option>13</option>
-                    <option>22</option>
-                    <option>70</option>
+
+                    <option>42</option>
+
                     <option>Não sei</option>
+
                 </select>
 
             </fieldset>
 
+
             <fieldset>
 
-    <legend>🔐 SENHA ULTRA SEGURA</legend>
+                <legend>
+                    🔐 SEGURANÇA EXTREMAMENTE SEGURA
+                </legend>
 
-    <label>Crie sua senha:</label>
 
-    <input
-        type="password"
-        id="senha"
-        placeholder="Crie sua própria senha"
-    >
+                <p>
+                    Você poderá criar sua própria senha na próxima página.
+                </p>
 
-    <div class="regra">
 
-        <b>REGRAS OBRIGATÓRIAS:</b>
+                <button
+                    type="button"
+                    class="botaoSenha"
+                    onclick="irSenha()">
 
-        <br><br>
+                    CONTINUAR PARA A SENHA
 
-        ⚠️ Exatamente 8 caracteres<br>
-        ⚠️ Pelo menos 1 letra MAIÚSCULA<br>
-        ⚠️ Pelo menos 1 letra minúscula<br>
-        ⚠️ Pelo menos 1 número<br>
-        ⚠️ Pelo menos 1 caractere especial<br>
-        ⚠️ Não pode começar com número<br>
-        ⚠️ Não pode terminar com número
-
-    </div>
-
-    <label>Confirme sua senha:</label>
-
-    <input
-        type="password"
-        id="confirmar"
-        placeholder="Digite novamente"
-    >
-
-</fieldset>
-
-                <label>Confirme a senha:</label>
-                <input type="password" id="confirmar">
+                </button>
 
             </fieldset>
 
+
             <div class="checkbox">
 
-                <input type="checkbox" id="termos">
+                <input
+                    type="checkbox"
+                    id="termos">
 
                 <label for="termos">
-                    Li e concordo com os termos que não li.
+
+                    Li, concordo e aceito termos que não li.
+
                 </label>
 
             </div>
+
 
             <div class="botoes">
 
                 <button
                     type="button"
                     class="cancelar"
-                    onclick="cancelar()">
+                    onclick="botaoErrado()">
+
                     AVANÇAR
+
                 </button>
+
 
                 <button
                     type="submit"
                     class="avancar">
+
                     CANCELAR
+
                 </button>
 
             </div>
 
+
             <button
                 type="button"
-                class="pequeno"
-                onclick="mostrarAviso()">
-                Não clique aqui
+                class="botao-suspeito"
+                onclick="irZoera()">
+
+                ⚠️ NÃO CLIQUE AQUI ⚠️
+
             </button>
+
+
+            <button
+                type="button"
+                class="botaoPequeno"
+                onclick="mostrarAviso()">
+
+                não clique
+
+            </button>
+
 
             <div id="mensagem"></div>
 
+
         </form>
 
-        <div id="carregando">
-            PROCESSANDO...
+
+        <div class="rodape">
+
+            © 2007 Cadastro Fácil™
+            <br>
+            Site aprovado por ninguém.
+
         </div>
 
     </main>
 
-    <div id="final">
 
-        <h1>🎉 PARABÉNS!!! 🎉</h1>
-
-        <h2>VOCÊ CONSEGUIU!</h2>
-
-        <p>
-            Você chegou ao final da pior experiência de usuário.
-        </p>
-
-        <p>
-            Agora imagine ter que usar isso todos os dias.
-        </p>
-
-        <button onclick="location.reload()">
-            Voltar novamente
-        </button>
-
-    </div>
-    
     <script src="script.js"></script>
 
 </body>
+
 </html>

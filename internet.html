@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sem conexão</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body class="internetBody">
+
+
+    <div class="internetContainer">
+
+
+        <div class="iconeInternet">
+            🌐
+        </div>
+
+
+        <h1>
+            A conexão foi interrompida
+        </h1>
+
+
+        <p>
+            Não foi possível estabelecer conexão
+            com este site.
+        </p>
+
+
+        <p class="codigoErro">
+            ERR_INTERNET_DISCONNECTED
+        </p>
+
+
+        <p>
+            Verifique sua conexão com a internet
+            e tente novamente.
+        </p>
+
+
+        <div class="botoesInternet">
+
+
+            <button
+                onclick="recarregar()">
+
+                🔄 Recarregar
+
+            </button>
+
+
+            <button
+                onclick="mostrarDetalhes()">
+
+                Detalhes
+
+            </button>
+
+
+            <button
+                onclick="voltarCadastro()">
+
+                ← Voltar
+
+            </button>
+
+
+        </div>
+
+
+        <div id="detalhes"></div>
+
+
+    </div>
+
+
+    <script>
+
+        function recarregar() {
+
+            const detalhes =
+                document.getElementById("detalhes");
+
+            detalhes.innerHTML =
+                "🔄 Tentando reconectar...";
+
+            setTimeout(function() {
+
+                detalhes.innerHTML =
+                    "❌ Não foi possível conectar.";
+
+            }, 1800);
+
+        }
+
+
+        function mostrarDetalhes() {
+
+            document.getElementById("detalhes").innerHTML =
+
+                `
+                <div class="caixaDetalhes">
+
+                    <b>Detalhes do erro:</b>
+
+                    <br><br>
+
+                    Internet: ❌<br>
+                    Servidor: ❌<br>
+                    Wi-Fi: ❓<br>
+                    Problema: provavelmente você.
+
+                </div>
+                `;
+
+        }
+
+
+        function voltarCadastro() {
+
+            window.location.href =
+                "index.html";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: white;
+    color: #d0d0d0;
+}
+
+.container {
+    width: 500px;
+    margin: 100px auto;
+    padding: 30px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 3px #ddd;
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+    color: #999;
+}
+
+.aviso {
+    font-size: 12px;
+}
+
+label {
+    display: block;
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+input {
+    width: 95%;
+    padding: 12px;
+    margin-top: 5px;
+}
+
+.botoes {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.cancelar {
+    background: green;
+    color: white;
+}
+
+.avancar {
+    background: #ddd;
+    color: #aaa;
+}
+
+#mensagem {
+    margin-top: 20px;
+    font-size: 13px;
+}

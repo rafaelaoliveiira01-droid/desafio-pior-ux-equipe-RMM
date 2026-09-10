@@ -76,36 +76,41 @@
 
             <fieldset>
 
-                <legend>SEGURANÇA EXTREMAMENTE SEGURA</legend>
+    <legend>🔐 SENHA ULTRA SEGURA</legend>
 
-                <label>Senha:</label>
+    <label>Crie sua senha:</label>
 
-                <input
-                    type="password"
-                    id="senha"
-                    placeholder="Sua senha provavelmente está errada"
-                >
+    <input
+        type="password"
+        id="senha"
+        placeholder="Crie sua própria senha"
+    >
 
-                <p class="regra">
-                    A senha deve:
-                    <br>
-                    • ter exatamente 8 caracteres;
-                    <br>
-                    • não ter 8 caracteres;
-                    <br>
-                    • possuir uma letra;
-                    <br>
-                    • não possuir letras;
-                    <br>
-                    • possuir um número;
-                    <br>
-                    • não possuir números.
-                </p>
+    <div class="regra">
 
-                <label>Confirme a senha:</label>
-                <input type="password" id="confirmar">
+        <b>REGRAS OBRIGATÓRIAS:</b>
 
-            </fieldset>
+        <br><br>
+
+        ⚠️ Exatamente 8 caracteres<br>
+        ⚠️ Pelo menos 1 letra MAIÚSCULA<br>
+        ⚠️ Pelo menos 1 letra minúscula<br>
+        ⚠️ Pelo menos 1 número<br>
+        ⚠️ Pelo menos 1 caractere especial<br>
+        ⚠️ Não pode começar com número<br>
+        ⚠️ Não pode terminar com número
+
+    </div>
+
+    <label>Confirme sua senha:</label>
+
+    <input
+        type="password"
+        id="confirmar"
+        placeholder="Digite novamente"
+    >
+
+</fieldset>
 
             <div class="checkbox">
 
@@ -170,7 +175,35 @@
         </button>
 
     </div>
+    <div id="paginaInternet">
 
+    <div class="erroInternet">
+
+        <div class="iconeInternet">
+            🌐
+        </div>
+
+        <h1>A conexão foi interrompida</h1>
+
+        <p>
+            Não foi possível estabelecer conexão com este site.
+        </p>
+
+        <p class="codigo">
+            ERR_INTERNET_DISCONNECTED
+        </p>
+
+        <button onclick="tentarConectar()">
+            🔄 Recarregar
+        </button>
+
+        <button onclick="continuarMesmoAssim()">
+            Avançado
+        </button>
+
+    </div>
+
+</div>
     <script src="script.js"></script>
 
 </body>

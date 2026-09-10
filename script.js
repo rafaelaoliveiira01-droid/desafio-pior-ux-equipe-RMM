@@ -265,7 +265,7 @@ function continuarMesmoAssim() {
         "Boa tentativa. Você encontrou uma opção que não deveria existir."
     );
 
-    document.getElementById("paginaInternet").innerHTML = 
+    document.getElementById("paginaInternet").innerHTML = `
 
         <div class="erroInternet">
 
@@ -289,5 +289,5 @@ function continuarMesmoAssim() {
 
         </div>
 
-    ;
+    `;
 }

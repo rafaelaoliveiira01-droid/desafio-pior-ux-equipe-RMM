@@ -138,32 +138,71 @@ formulario.addEventListener("submit", function(event) {
     }
 
 
-    if (senha.length < 8) {
+    if (senha.length !== 8) {
 
-        mensagem.innerText =
-            "Senha inválida: ela precisa ser maior.";
+    mensagem.innerText =
+        "🔐 A senha precisa ter exatamente 8 caracteres.";
 
-        return;
-    }
+    return;
+}
 
+if (!/[A-Z]/.test(senha)) {
 
-    if (senha.length > 8) {
+    mensagem.innerText =
+        "❌ A senha precisa ter pelo menos uma letra MAIÚSCULA.";
 
-        mensagem.innerText =
-            "Senha inválida: ela precisa ser menor.";
+    return;
+}
 
-        return;
-    }
+if (!/[a-z]/.test(senha)) {
 
+    mensagem.innerText =
+        "❌ A senha precisa ter pelo menos uma letra minúscula.";
 
-    if (senha !== confirmar) {
+    return;
+}
 
-        mensagem.innerText =
-            "As senhas parecem iguais, mas o sistema decidiu que não.";
+if (!/[0-9]/.test(senha)) {
 
-        return;
-    }
+    mensagem.innerText =
+        "❌ A senha precisa ter pelo menos um número.";
 
+    return;
+}
+
+if (!/[!@#$%^&*]/.test(senha)) {
+
+    mensagem.innerText =
+        "❌ A senha precisa ter um caractere especial.";
+
+    return;
+}
+
+if (/^[0-9]/.test(senha)) {
+
+    mensagem.innerText =
+        "❌ A senha não pode começar com número.";
+
+    return;
+}
+
+if (/[0-9]$/.test(senha)) {
+
+    mensagem.innerText =
+        "❌ A senha não pode terminar com número.";
+
+    return;
+}
+
+// CONFIRMAÇÃO
+
+if (senha !== confirmar) {
+
+    mensagem.innerText =
+        "❌ As senhas não são iguais.";
+
+    return;
+}
 
     if (!termos) {
 
@@ -203,3 +242,52 @@ formulario.addEventListener("submit", function(event) {
     }, 3500);
 
 });
+
+function tentarConectar() {
+
+    alert(
+        "Tentando estabelecer conexão..."
+    );
+
+    setTimeout(() => {
+
+        alert(
+            "Não foi possível conectar. Verifique sua conexão com a internet."
+        );
+
+    }, 1500);
+}
+
+
+function continuarMesmoAssim() {
+
+    alert(
+        "Boa tentativa. Você encontrou uma opção que não deveria existir."
+    );
+
+    document.getElementById("paginaInternet").innerHTML = `
+
+        <div class="erroInternet">
+
+            <div class="iconeInternet">
+                ⚠️
+            </div>
+
+            <h1>Não foi possível carregar a página</h1>
+
+            <p>
+                A conexão com o servidor foi perdida.
+            </p>
+
+            <p>
+                Tente novamente mais tarde.
+            </p>
+
+            <button onclick="location.reload()">
+                Voltar
+            </button>
+
+        </div>
+
+    `;
+}

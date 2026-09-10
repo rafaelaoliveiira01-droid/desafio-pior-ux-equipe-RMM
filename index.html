@@ -3,47 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Fácil™</title>
+    <title>Cadastro Fácil 2007</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <div id="avisoTopo">
+        ⚠️ ATENÇÃO: você está navegando na internet.
+    </div>
 
-        <h1>CADASTRO SUPER SIMPLES</h1>
+    <div class="popup popup1">
+        <h3>PARABÉNS!</h3>
+        <p>Você ganhou uma oportunidade que não solicitou.</p>
+        <button onclick="fecharPopup(this)">OK</button>
+    </div>
 
-        <p class="aviso">
-            É muito fácil! Só siga as instruções.
+    <div class="popup popup2">
+        <h3>IMPORTANTE!!!</h3>
+        <p>Esta mensagem não é importante.</p>
+        <button onclick="fecharPopup(this)">Fechar</button>
+    </div>
+
+    <div class="popup popup3">
+        <h3>AVISO DO SISTEMA</h3>
+        <p>Seu sistema está funcionando normalmente.</p>
+        <button onclick="fecharPopup(this)">Entendi</button>
+    </div>
+
+    <main>
+
+        <marquee>
+            ★★★ BEM-VINDO AO CADASTRO MAIS FÁCIL DA INTERNET ★★★
+        </marquee>
+
+        <h1>CADASTRO SUPER FÁCIL™</h1>
+
+        <div class="barra">
+            ████████████████████ 99%
+        </div>
+
+        <p class="subtitulo">
+            Preencha alguns poucos campos obrigatórios opcionais.
         </p>
 
-        <form id="formulario">
+        <form id="cadastro">
 
-            <label>Nome completo:</label>
-            <input type="text" id="nome">
+            <fieldset>
 
-            <label>E-mail:</label>
-            <input type="email" id="email">
+                <legend>INFORMAÇÕES DESNECESSÁRIAS</legend>
 
-            <label>Senha:</label>
-            <input type="password" id="senha">
+                <label>Nome:</label>
+                <input type="text" id="nome">
 
-            <label>Confirme sua senha:</label>
-            <input type="password" id="confirmar">
+                <label>Nome da sua primeira escola:</label>
+                <input type="text" id="escola">
+
+                <label>E-mail:</label>
+                <input type="text" id="email">
+
+                <label>Qual desses números você prefere?</label>
+
+                <select id="numero">
+                    <option value="">Escolha uma opção</option>
+                    <option>7</option>
+                    <option>13</option>
+                    <option>42</option>
+                    <option>Não sei</option>
+                </select>
+
+            </fieldset>
+
+            <fieldset>
+
+                <legend>SEGURANÇA EXTREMAMENTE SEGURA</legend>
+
+                <label>Senha:</label>
+
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Sua senha provavelmente está errada"
+                >
+
+                <p class="regra">
+                    A senha deve:
+                    <br>
+                    • ter exatamente 8 caracteres;
+                    <br>
+                    • não ter 8 caracteres;
+                    <br>
+                    • possuir uma letra;
+                    <br>
+                    • não possuir letras;
+                    <br>
+                    • possuir um número;
+                    <br>
+                    • não possuir números.
+                </p>
+
+                <label>Confirme a senha:</label>
+                <input type="password" id="confirmar">
+
+            </fieldset>
+
+            <div class="checkbox">
+
+                <input type="checkbox" id="termos">
+
+                <label for="termos">
+                    Li e concordo com os termos que não li.
+                </label>
+
+            </div>
 
             <div class="botoes">
-                <button type="button" class="cancelar" onclick="cancelar()">
+
+                <button
+                    type="button"
+                    class="cancelar"
+                    onclick="cancelar()">
                     AVANÇAR
                 </button>
 
-                <button type="submit" class="avancar">
+                <button
+                    type="submit"
+                    class="avancar">
                     CANCELAR
                 </button>
+
             </div>
 
-            <p id="mensagem"></p>
+            <button
+                type="button"
+                class="pequeno"
+                onclick="mostrarAviso()">
+                Não clique aqui
+            </button>
+
+            <div id="mensagem"></div>
 
         </form>
+
+        <div id="carregando">
+            PROCESSANDO...
+        </div>
+
+    </main>
+
+    <div id="final">
+
+        <h1>🎉 PARABÉNS!!! 🎉</h1>
+
+        <h2>VOCÊ SOBREVIVEU!</h2>
+
+        <p>
+            Você chegou ao final da pior experiência de usuário.
+        </p>
+
+        <p>
+            Agora imagine ter que usar isso todos os dias.
+        </p>
+
+        <button onclick="location.reload()">
+            Voltar e sofrer novamente
+        </button>
 
     </div>
 

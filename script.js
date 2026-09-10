@@ -1,293 +1,419 @@
-const formulario = document.getElementById("cadastro");
-const mensagem = document.getElementById("mensagem");
-const carregando = document.getElementById("carregando");
+/* =================================
+   POPUPS DA PÁGINA PRINCIPAL
+================================= */
 
-let tentativas = 0;
 
 function fecharPopup(botao) {
 
     botao.parentElement.style.display = "none";
 
-    setTimeout(() => {
 
-        const novoAviso = document.createElement("div");
+    setTimeout(function() {
 
-        novoAviso.className = "popup";
+        const aviso =
+            document.createElement("div");
 
-        novoAviso.style.top =
+
+        aviso.className = "popup";
+
+
+        aviso.style.top =
             Math.floor(Math.random() * 500) + "px";
 
-        novoAviso.style.left =
-            Math.floor(Math.random() * 800) + "px";
 
-        novoAviso.innerHTML = `
-            <h3>AVISO IMPORTANTE</h3>
-            <p>Você fechou um aviso. Isso foi registrado.</p>
-            <button onclick="fecharPopup(this)">
+        aviso.style.left =
+            Math.floor(Math.random() * 900) + "px";
+
+
+        aviso.innerHTML = `
+
+            <h3>
+                ⚠️ NOVO AVISO
+            </h3>
+
+            <p>
+                Você fechou um aviso.
+                Portanto, aqui está outro.
+            </p>
+
+            <button
+                onclick="fecharPopup(this)">
+
                 Fechar
+
             </button>
+
         `;
 
-        document.body.appendChild(novoAviso);
 
-    }, 1500);
+        document.body.appendChild(aviso);
+
+
+    }, 1200);
+
 }
 
 
-function mostrarAviso() {
+
+/* =================================
+   BOTÃO ERRADO
+================================= */
+
+
+function botaoErrado() {
+
+    const mensagem =
+        document.getElementById("mensagem");
+
 
     mensagem.innerText =
-        "⚠️ Você clicou no botão que dizia para não clicar.";
-
-    setTimeout(() => {
-
-        mensagem.innerText =
-            "Parabéns! Essa informação não ajuda em absolutamente nada.";
-
-    }, 2000);
-}
+        "🤡 Você clicou em AVANÇAR, mas esse botão não faz isso.";
 
 
-function cancelar() {
+    const botao =
+        document.querySelector(".cancelar");
 
-    tentativas++;
-
-    mensagem.innerText =
-        "Você tentou avançar, mas clicou no botão errado.";
-
-    const botao = document.querySelector(".cancelar");
 
     botao.style.position = "relative";
+
 
     botao.style.left =
         Math.floor(Math.random() * 200) - 100 + "px";
 
+
     botao.style.top =
         Math.floor(Math.random() * 100) - 50 + "px";
 
-    if (tentativas >= 3) {
-
-        mensagem.innerText =
-            "Você já clicou " +
-            tentativas +
-            " vezes. Talvez o problema seja você.";
-
-    }
 }
 
 
-formulario.addEventListener("submit", function(event) {
 
-    event.preventDefault();
+/* =================================
+   AVISO INÚTIL
+================================= */
+
+
+function mostrarAviso() {
+
+    const mensagem =
+        document.getElementById("mensagem");
+
+
+    mensagem.innerText =
+        "⚠️ AVISO: você clicou em um botão que não deveria clicar.";
+
+
+    setTimeout(function() {
+
+        mensagem.innerText =
+            "Este aviso não possui nenhuma utilidade.";
+
+    }, 2000);
+
+}
+
+
+
+/* =================================
+   IR PARA A PÁGINA DE ZOEIRA
+================================= */
+
+
+function irZoera() {
+
+    window.location.href =
+        "zoera.html";
+
+}
+
+
+
+/* =================================
+   IR PARA SENHA
+================================= */
+
+
+function irSenha() {
 
     const nome =
         document.getElementById("nome").value;
 
+
     const escola =
         document.getElementById("escola").value;
+
 
     const email =
         document.getElementById("email").value;
 
+
     const numero =
         document.getElementById("numero").value;
 
-    const senha =
-        document.getElementById("senha").value;
-
-    const confirmar =
-        document.getElementById("confirmar").value;
 
     const termos =
         document.getElementById("termos").checked;
 
 
+    const mensagem =
+        document.getElementById("mensagem");
+
+
     if (nome === "") {
 
         mensagem.innerText =
-            "ERRO: Seu nome não foi encontrado. Tente lembrar quem você é.";
+            "❌ Você esqueceu seu nome.";
 
         return;
+
     }
 
 
     if (escola === "") {
 
         mensagem.innerText =
-            "ERRO CRÍTICO: precisamos saber onde você estudou para confirmar que você estudou.";
+            "❌ Você esqueceu sua primeira escola.";
 
         return;
+
     }
 
 
     if (email === "") {
 
         mensagem.innerText =
-            "Tudo certo! Porém o e-mail está completamente vazio.";
+            "❌ Cadê o e-mail?";
 
         return;
+
     }
 
 
     if (numero === "") {
 
         mensagem.innerText =
-            "Você esqueceu de escolher o número mais importante desta página.";
+            "❌ Escolha seu número favorito.";
 
         return;
+
     }
 
-
-    if (senha.length !== 8) {
-
-    mensagem.innerText =
-        "🔐 A senha precisa ter exatamente 8 caracteres.";
-
-    return;
-}
-
-if (!/[A-Z]/.test(senha)) {
-
-    mensagem.innerText =
-        "❌ A senha precisa ter pelo menos uma letra MAIÚSCULA.";
-
-    return;
-}
-
-if (!/[a-z]/.test(senha)) {
-
-    mensagem.innerText =
-        "❌ A senha precisa ter pelo menos uma letra minúscula.";
-
-    return;
-}
-
-if (!/[0-9]/.test(senha)) {
-
-    mensagem.innerText =
-        "❌ A senha precisa ter pelo menos um número.";
-
-    return;
-}
-
-if (!/[!@#$%^&*]/.test(senha)) {
-
-    mensagem.innerText =
-        "❌ A senha precisa ter um caractere especial.";
-
-    return;
-}
-
-if (/^[0-9]/.test(senha)) {
-
-    mensagem.innerText =
-        "❌ A senha não pode começar com número.";
-
-    return;
-}
-
-if (/[0-9]$/.test(senha)) {
-
-    mensagem.innerText =
-        "❌ A senha não pode terminar com número.";
-
-    return;
-}
-
-// CONFIRMAÇÃO
-
-if (senha !== confirmar) {
-
-    mensagem.innerText =
-        "❌ As senhas não são iguais.";
-
-    return;
-}
 
     if (!termos) {
 
         mensagem.innerText =
-            "Você precisa concordar que leu algo que provavelmente não leu.";
+            "☑️ Você precisa concordar com os termos.";
 
         return;
+
     }
 
 
-    carregando.style.display = "block";
+    sessionStorage.setItem(
+        "nome",
+        nome
+    );
 
-    setTimeout(() => {
 
-        carregando.innerHTML =
-            "PROCESSANDO...<br>37%";
+    window.location.href =
+        "senha.html";
+
+}
+
+
+
+/* =================================
+   VERIFICAÇÃO DA SENHA
+================================= */
+
+
+function verificarSenha() {
+
+    const senha =
+        document.getElementById("senha").value;
+
+
+    const confirmar =
+        document.getElementById("confirmar").value;
+
+
+    const mensagem =
+        document.getElementById("senhaMensagem");
+
+
+
+    /*
+       REGRA 1
+       EXATAMENTE 8 CARACTERES
+    */
+
+    if (senha.length !== 8) {
+
+        mensagem.innerText =
+            "❌ A senha precisa ter EXATAMENTE 8 caracteres.";
+
+        return;
+
+    }
+
+
+
+    /*
+       REGRA 2
+       MAIÚSCULA
+    */
+
+    if (!/[A-Z]/.test(senha)) {
+
+        mensagem.innerText =
+            "❌ Falta uma letra MAIÚSCULA.";
+
+        return;
+
+    }
+
+
+
+    /*
+       REGRA 3
+       MINÚSCULA
+    */
+
+    if (!/[a-z]/.test(senha)) {
+
+        mensagem.innerText =
+            "❌ Falta uma letra minúscula.";
+
+        return;
+
+    }
+
+
+
+    /*
+       REGRA 4
+       NÚMERO
+    */
+
+    if (!/[0-9]/.test(senha)) {
+
+        mensagem.innerText =
+            "❌ A senha precisa ter um número.";
+
+        return;
+
+    }
+
+
+
+    /*
+       REGRA 5
+       CARACTERE ESPECIAL
+    */
+
+    if (!/[!@#$%^&*]/.test(senha)) {
+
+        mensagem.innerText =
+            "❌ Cadê o caractere especial?";
+
+        return;
+
+    }
+
+
+
+    /*
+       REGRA 6
+       NÃO COMEÇAR COM NÚMERO
+    */
+
+    if (/^[0-9]/.test(senha)) {
+
+        mensagem.innerText =
+            "❌ A senha não pode começar com número.";
+
+        return;
+
+    }
+
+
+
+    /*
+       REGRA 7
+       NÃO TERMINAR COM NÚMERO
+    */
+
+    if (/[0-9]$/.test(senha)) {
+
+        mensagem.innerText =
+            "❌ A senha não pode terminar com número.";
+
+        return;
+
+    }
+
+
+
+    /*
+       CONFIRMAÇÃO
+    */
+
+    if (senha !== confirmar) {
+
+        mensagem.innerText =
+            "❌ As duas senhas não são iguais.";
+
+        return;
+
+    }
+
+
+
+    /*
+       SENHA CORRETA
+    */
+
+    mensagem.style.background =
+        "green";
+
+
+    mensagem.innerText =
+        "✅ SENHA ACEITA! NÃO ACREDITO.";
+
+
+
+    setTimeout(function() {
+
+        mensagem.innerText =
+            "🔄 Verificando servidor...";
 
     }, 1000);
 
 
-    setTimeout(() => {
 
-        carregando.innerHTML =
-            "PROCESSANDO...<br>87%";
+    setTimeout(function() {
 
-    }, 2000);
+        mensagem.innerText =
+            "🔐 Autenticando usuário...";
 
-
-    setTimeout(() => {
-
-        carregando.style.display = "none";
-
-        document.querySelector("main").style.display = "none";
-
-        document.getElementById("final").style.display = "block";
-
-    }, 3500);
-
-});
-
-function tentarConectar() {
-
-    alert(
-        "Tentando estabelecer conexão..."
-    );
-
-    setTimeout(() => {
-
-        alert(
-            "Não foi possível conectar. Verifique sua conexão com a internet."
-        );
-
-    }, 1500);
-}
+    }, 2200);
 
 
-function continuarMesmoAssim() {
 
-    alert(
-        "Boa tentativa. Você encontrou uma opção que não deveria existir."
-    );
+    setTimeout(function() {
 
-    document.getElementById("paginaInternet").innerHTML = `
+        mensagem.innerText =
+            "⚠️ Problema inesperado...";
 
-        <div class="erroInternet">
+    }, 3200);
 
-            <div class="iconeInternet">
-                ⚠️
-            </div>
 
-            <h1>Não foi possível carregar a página</h1>
 
-            <p>
-                A conexão com o servidor foi perdida.
-            </p>
+    setTimeout(function() {
 
-            <p>
-                Tente novamente mais tarde.
-            </p>
+        window.location.href =
+            "internet.html";
 
-            <button onclick="location.reload()">
-                Voltar
-            </button>
+    }, 4500);
 
-        </div>
-
-    `;
 }

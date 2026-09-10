@@ -1,63 +1,244 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: white;
-    color: #d0d0d0;
+* {
+    box-sizing: border-box;
 }
 
-.container {
-    width: 500px;
-    margin: 100px auto;
-    padding: 30px;
-    border: 1px solid #eee;
-    box-shadow: 0 0 3px #ddd;
+body {
+    margin: 0;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #ffff00,
+            #ffff00 10px,
+            #ff00ff 10px,
+            #ff00ff 20px
+        );
+
+    font-family: "Comic Sans MS", cursive;
+    color: #000080;
+}
+
+#avisoTopo {
+    background: red;
+    color: yellow;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+
+    animation: piscar 0.5s infinite;
+}
+
+@keyframes piscar {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+main {
+    width: 650px;
+    margin: 50px auto;
+    background: #c0c0c0;
+    border: 8px ridge white;
+    padding: 20px;
+    box-shadow: 15px 15px 0 black;
+}
+
+marquee {
+    background: blue;
+    color: yellow;
+    font-size: 22px;
+    padding: 8px;
 }
 
 h1 {
-    font-size: 30px;
+    color: red;
     text-align: center;
-    color: #999;
+    font-size: 38px;
+
+    text-shadow:
+        3px 3px yellow,
+        -3px -3px lime;
 }
 
-.aviso {
-    font-size: 12px;
+.subtitulo {
+    background: yellow;
+    color: red;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.barra {
+    background: black;
+    color: lime;
+    padding: 10px;
+    font-family: monospace;
+    margin: 15px 0;
+}
+
+fieldset {
+    border: 5px dotted red;
+    margin-top: 20px;
+    background: #eeeeee;
+}
+
+legend {
+    background: purple;
+    color: yellow;
+    padding: 8px;
+    font-weight: bold;
 }
 
 label {
     display: block;
-    margin-top: 25px;
-    font-size: 13px;
+    margin-top: 15px;
+    color: #222;
 }
 
-input {
-    width: 95%;
+input,
+select {
+    width: 100%;
     padding: 12px;
-    margin-top: 5px;
+    border: 4px inset #aaa;
+    background: white;
+}
+
+.regra {
+    background: pink;
+    border: 3px solid red;
+    padding: 10px;
+    color: red;
+    font-size: 12px;
+}
+
+.checkbox {
+    margin-top: 20px;
+    background: orange;
+    padding: 10px;
+    border: 4px double purple;
+}
+
+.checkbox input {
+    width: auto;
+}
+
+.checkbox label {
+    display: inline;
 }
 
 .botoes {
-    margin-top: 40px;
     display: flex;
     justify-content: space-between;
+    margin-top: 30px;
 }
 
 button {
-    padding: 12px 20px;
-    border: none;
     cursor: pointer;
+    font-family: "Comic Sans MS", cursive;
+    font-weight: bold;
 }
 
 .cancelar {
-    background: green;
-    color: white;
+    background: lime;
+    color: blue;
+    border: 6px outset green;
+    padding: 15px 35px;
+    font-size: 18px;
 }
 
 .avancar {
     background: #ddd;
     color: #aaa;
+    border: 2px solid #aaa;
+    padding: 8px 15px;
+    font-size: 10px;
+}
+
+.pequeno {
+    margin-top: 30px;
+    background: black;
+    color: black;
+    border: none;
+    font-size: 8px;
 }
 
 #mensagem {
     margin-top: 20px;
-    font-size: 13px;
+    padding: 15px;
+    background: red;
+    color: yellow;
+    font-weight: bold;
+}
+
+#carregando {
+    display: none;
+    position: fixed;
+    top: 45%;
+    left: 35%;
+    background: black;
+    color: lime;
+    padding: 30px;
+    font-size: 25px;
+    border: 8px ridge white;
+}
+
+.popup {
+    position: fixed;
+    background: #ffff00;
+    border: 6px outset white;
+    padding: 15px;
+    width: 260px;
+    z-index: 1000;
+    box-shadow: 10px 10px black;
+}
+
+.popup h3 {
+    background: red;
+    color: white;
+    margin-top: 0;
+}
+
+.popup button {
+    background: blue;
+    color: white;
+    padding: 8px 20px;
+}
+
+.popup1 {
+    top: 80px;
+    left: 30px;
+}
+
+.popup2 {
+    top: 300px;
+    right: 30px;
+}
+
+.popup3 {
+    bottom: 40px;
+    left: 40px;
+}
+
+#final {
+    display: none;
+    width: 600px;
+    margin: 100px auto;
+    background: yellow;
+    color: red;
+    padding: 50px;
+    text-align: center;
+    border: 15px ridge blue;
+    box-shadow: 20px 20px black;
+}
+
+#final h1 {
+    font-size: 50px;
 }
